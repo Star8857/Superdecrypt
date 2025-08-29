@@ -16,5 +16,14 @@ jobs:
 
       - name: Run simple script
         run: echo "Hello GitHub Actions! Python is ready."
+          - name: Create sample file
+    run: echo "Test artifact" > output.txt
+
+  - name: Upload artifact
+    uses: actions/upload-artifact@v3
+    with:
+      name: my-artifact
+      path: output.txt
+
 
 
